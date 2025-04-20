@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Sanctuary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 100;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .shimmer {
+            font-size: 3em;
+            color: white;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.7);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+            }
+        }
+
+        .content {
+            position: relative;
+            top: 40%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<button id="playButton" style="position:absolute; top:20px; right:20px; z-index:3; background:rgba(0,0,0,0.6); color:white; border:none; padding:10px 20px; cursor:pointer; font-family: 'Poppins', sans-serif;">
+    🎵 Play Sanctuary Music
+</button>
+
+<script>
+    var audio = new Audio('cosmic_music.mp3');
+    audio.loop = true;
+
+    document.getElementById('playButton').addEventListener('click', function () {
+        audio.play();
+        this.style.display = 'none'; // Hide the button once it's clicked
+    });
+</script>
+<body>
+
+    <!-- Background video -->
+    <video id="video-background" autoplay muted loop>
+        <source src="https://raw.githubusercontent.com/CosmovisionCreative/CosmicSanctuary/main/nebula.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="shimmer">
+            A Haven to Return to Until the World Becomes One
+        </div>
+    </div>
+
+    <!-- Audio (autoplay if allowed) -->
+    <audio id="bg-music" autoplay loop>
+        <source src="https://raw.githubusercontent.com/CosmovisionCreative/CosmicSanctuary/main/cosmic_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+<!-- Footer -->
+<div class="footer">
+  <p><strong>Presented by <a href="https://www.linkedin.com/company/cosmovisioncreative" target="_blank">Cosmovision Creative</a></strong></p>
+  <p>Video by Jordan Christopher from Pixabay · Music by Chakratones from YouTube</p>
+</div>
+
+</body>
+</html>
